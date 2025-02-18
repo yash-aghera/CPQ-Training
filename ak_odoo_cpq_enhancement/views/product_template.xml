@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- inherit template to add button -->
+        <record id="cpq_product_template_view_kanban_inherited" model="ir.ui.view">
+            <field name="name">cpq.product.template.view.kanban.inherited</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="ak_odoo_cpq.cpq_product_template_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//footer" position="inside">
+                    <div class="d-flex ms-auto">
+                        <a type="object" name="view_cpq_product_session"
+                           class="me-1 btn btn-outline-primary"
+                           role="button">
+                            Session
+                        </a>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

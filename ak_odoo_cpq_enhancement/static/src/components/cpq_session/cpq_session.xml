@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- template for product session -->
+    <t t-name="ak_odoo_cpq_enhancement.CPQProductSession">
+        <div>
+            <div class="h2">
+                Session Detail
+            </div>
+            <!-- if have data than display -->
+            <div>
+                <t t-if="this.session_data.length > 0">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Product</th>
+                                <th>Customer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <t t-foreach="this.session_data" t-as="session" t-key="session.id">
+                                <tr>
+                                    <td t-out="session.name"/>
+                                    <td t-out="session.product_id[1]"/>
+                                    <td t-out="session.partner_id[1]"/>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-else="">
+                    <p>No session data available.</p>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>
