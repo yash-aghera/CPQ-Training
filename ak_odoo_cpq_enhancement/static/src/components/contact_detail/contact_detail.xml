@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- template for product session -->
+    <t t-name="ak_odoo_cpq_enhancement.ContactDetail">
+        <div>
+            <div class="h2 m-3">
+                Contact Detail
+            </div>
+            <div class="div_contact_info">
+                <div class="d-inline-block">
+                    Contact :
+                </div>
+                <!-- input type field -->
+                <div class="d-inline-block input_contact">
+                    <Many2XAutocomplete
+                        value="state.name || ''"
+                        placeholder="'-- Select Contact --'"
+                        resModel="'res.partner'"
+                        fieldString="'Contact'"
+                        getDomain="getDomain"
+                        update.bind="onUpdateContact"
+                        quickCreate="null"
+                        autofocus="true"
+                    />
+                </div>
+            </div>
+            <!-- data of record -->
+            <div class="div_info table table-bordered">
+                <tr t-if="state.contact_id">
+                    <td> Id :</td>
+                    <td t-out="state.contact_id"/>
+                </tr>
+                <tr t-if="state.email">
+                    <td> Email :</td>
+                    <td t-out="state.email"/>
+                </tr>
+                <tr t-if="state.mobile">
+                    <td> Mobile :</td>
+                    <td t-out="state.mobile"/>
+                </tr>
+                <tr t-if="state.phone">
+                    <td> Phone :</td>
+                    <td t-out="state.phone"/>
+                </tr>
+                <tr t-if="state.website">
+                    <td> Website :</td>
+                    <td t-out="state.website"/>
+                </tr>
+                <tr t-if="state.type">
+                    <td> Type :</td>
+                    <td t-out="state.type"/>
+                </tr>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Client Action For Contact Detail -->
+    <record id="cpq_contact_detail_action" model="ir.actions.client">
+        <field name="name">Contact Detail</field>
+        <field name="tag">cpq_contact_detail</field>
+    </record>
+
+    <menuitem name="Contact"
+              id="menu_cpq_contact_detail"
+              parent="ak_odoo_cpq.menu_cpq_root"
+              action="ak_odoo_cpq_enhancement.cpq_contact_detail_action"
+              sequence="30"/>
+
+</odoo>

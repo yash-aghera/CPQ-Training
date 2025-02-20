@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Odoo CPQ - Custom Product Configurator',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
     'summary': 'CPQ enhancement',
     'description': """
        CPQ enhancement by task of session
@@ -11,6 +11,7 @@
     'depends': ['ak_odoo_cpq'],
     'data': [
         'views/product_template.xml',
+        'views/menus.xml',
     ],
     'assets': {
         'web.assets_backend': [
