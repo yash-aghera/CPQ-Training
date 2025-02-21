@@ -33,19 +33,31 @@ export class ContactDetail extends Component {
     update values from input field value
     */
     async onUpdateContact(ev) {
-        const field_values = ['id', 'display_name', 'email', 'type', 'website', 'mobile', 'phone'];
-        this.orm.read('res.partner', [ev[0].id], field_values)
-        .then((rec) => {
-                let contact_data = rec[0];
-                this.state.name = ev[0].display_name
-                this.state.email = contact_data.email
-                this.state.contact_id= contact_data.id
-                this.state.type = contact_data.type
-                this.state.website = contact_data.website
-                this.state.mobile = contact_data.mobile
-                this.state.phone = contact_data.phone
-            }
-        );
+        if (ev)
+        {
+            const field_values = ['id', 'display_name', 'email', 'type', 'website', 'mobile', 'phone'];
+            this.orm.read('res.partner', [ev[0].id], field_values)
+            .then((rec) => {
+                    let contact_data = rec[0];
+                    this.state.name = ev[0].display_name
+                    this.state.email = contact_data.email
+                    this.state.contact_id= contact_data.id
+                    this.state.type = contact_data.type
+                    this.state.website = contact_data.website
+                    this.state.mobile = contact_data.mobile
+                    this.state.phone = contact_data.phone
+                }
+            );
+        }
+        else{
+            this.state.name = false
+            this.state.email = false
+            this.state.contact_id= false
+            this.state.type = false
+            this.state.website = false
+            this.state.mobile = false
+            this.state.phone = false
+        }
 
     };
 
