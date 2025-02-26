@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="ak_odoo_cpq_enhancement.UpdateCustomerRecord">
+        <div style="border: 1px solid black">
+            <div t-if="props.contactId" class="div_customer_update">
+                <h2>Selected Record</h2>
+                <hr/>
+                <div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="input_name" class="form-label">Name</label>
+                            <input type="char" class="form-control" t-on-change="updateInputValue" id="input_name" t-att-value="state.name" required="1"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input_email" class="form-label">Email</label>
+                            <input type="char" class="form-control" t-on-change="updateInputValue" id="input_email" t-att-value="state.email"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input_mobile" class="form-label">Mobile</label>
+                            <input type="char" class="form-control" t-on-change="updateInputValue" id="input_mobile" t-att-value="state.mobile"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input_phone" class="form-label">Phone</label>
+                            <input type="char" class="form-control" t-on-change="updateInputValue" id="input_phone" t-att-value="state.phone"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input_web" class="form-label">Website</label>
+                            <input type="char" class="form-control" t-on-change="updateInputValue" id="input_web" t-att-value="state.website"/>
+                        </div>
+                        <button t-if="state.updated" t-on-click="onclickSubmit" type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div t-else="" class="div_select_customer">
+                -- Select Customer --
+            </div>
+        </div>
+    </t>
+</templates>

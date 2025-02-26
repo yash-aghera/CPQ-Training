@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="ak_odoo_cpq_enhancement.contactList">
+        <div>
+            <div class="h2 m-3">
+                Update Customer Detail
+            </div>
+            <div class="row m-5">
+                <h2>Customer list</h2>
+                <div class="col-4 div_contact_list">
+                    <table class="table table-hover">
+                        <tbody>
+                           <t t-foreach="this.contact_list" t-as="contact" t-key="contact.id">
+                                <tr t-on-click="() => this.RecordClicked(contact.id)">
+                                    <td t-out="contact.name"/>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-8">
+                    <UpdateCustomerRecord contactId="state.contact"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Odoo CPQ - Custom Product Configurator',
-    'version': '18.0.1.0.2',
+    'version': '18.0.1.0.3',
     'summary': 'CPQ enhancement',
     'description': """
        CPQ enhancement by task of session
